@@ -8,20 +8,6 @@ To install, Please follow these steps:
 4. Now start the webserver and open localhost/index.php
 5. It should open a website.
 
-Notice: The given steps will only ensure that this website is working. To be able to use them you need the files in this tree
-
-Database
-  |
-  |__Videos
-      |
-      |__Anime
-      |   |__(all the anime with folder name same as in mysql and file name according to episode list.)
-      |
-      |__Movies
-      |   |__(all the movies with folder name and file name same as in the mysql.)
-      |
-      |__TV
-          |__(all the TV series with folder name same as in mysql and file name according to episode list.)
-      
+Notice: The given steps will only ensure that this website is working.
 
 If you want to, you can delete the file names and images that are given and create your own by a simply editing the code.
