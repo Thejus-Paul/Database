@@ -13,6 +13,7 @@
 	<form method="get" action="index.php">
 		<ul>
 			<span><a href="index.php">Database</a></span>
+			<li><a href="insert.php">New</a></li>
 			<li><a href="index.php?anime=true">Anime</a></li>
 			<li><a href="index.php?television=true">Television</a></li>
 			<li><a href="index.php?movies=true">Movies</a></li>
