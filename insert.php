@@ -8,20 +8,22 @@
 <body>
 
 <!-- Getting the Details of New Movie,Anime or TV series -->
-<form method="get" name="form">
-	Name:<input type="text" name="name"><br><br> <!-- Name Insertion -->
-	Type:
-	<select name="type_of_file"><!-- Selecting the Type of file -->
-		<option onClick="check_series()">movies</option><!-- onClick calls the function to check if it is series or not-->
-		<option onClick="check_series()">television</option>
-		<option onClick="check_series()">anime</option>
-	</select><br><br>
-	Number of Episodes:<input type="Number" name="no_of_ep" disabled><br><br><!-- Inserting Number of Episodes(I will be adding a JavaScript Function to check if the selected type is series or not.For movies this feature will be disabled) -->
-	Date of Release:<input type="Date" name="date_of_release"><br><br><!-- Date of Release in order to search for the latest Added -->
-	Language:<input type="text" name="language"><br><br><!-- Language of the video (Now only applicable to Movies.If you want this for Television or Anime then add a new column in mysql and edit '$sql' in PHP) -->
-	Format of the File<input type="text" name="format"><br><br><!-- Format of the file,Example: mp4,mkv. -->
-	<input type="submit" name="insert_submit" value="Add/Insert" onClick="check_series()"><!-- Submit Button -->
-</form>
+<div class="insertion_form">
+	<form method="get" name="form">
+		Name:<input type="text" name="name"><br><br> <!-- Name Insertion -->
+		Type:
+		<select name="type_of_file"><!-- Selecting the Type of file -->
+			<option onClick="check_series()">movies</option><!-- onClick calls the function to check if it is series or not-->
+			<option onClick="check_series()">television</option>
+			<option onClick="check_series()">anime</option>
+		</select><br><br>
+		Number of Episodes:<input type="Number" name="no_of_ep" disabled><br><br><!-- Inserting Number of Episodes(I will be adding a JavaScript Function to check if the selected type is series or not.For movies this feature will be disabled) -->
+		Date of Release:<input type="Date" name="date_of_release"><br><br><!-- Date of Release in order to search for the latest Added -->
+		Language:<input type="text" name="language"><br><br><!-- Language of the video (Now only applicable to Movies.If you want this for Television or Anime then add a new column in mysql and edit '$sql' in PHP) -->
+		Format of the File<input type="text" name="format"><br><br><!-- Format of the file,Example: mp4,mkv. -->
+		<input type="submit" name="insert_submit" value="Add/Insert" onClick="check_series()"><!-- Submit Button -->
+	</form>
+</div>
 
 <script type="text/JavaScript">
 /* Function to check whether the options in 'type_of_file' are series type or not.If not, then the 'no_of_ep' will be disabled. */
@@ -62,13 +64,13 @@ if(!$conn){echo 'Error: MySQL connection Failed!';}// If any error in connecting
 $sel_db = mysql_select_db($db);// Selecting the Required Database from MySQL.
 if(!$sel_db){echo '\nError:Database connection Failed!';}// If any error in connecting to MySQl Database, then this code will be executed.
 
-if($type_of_file == "movies"){
+if($type_of_file == "movies"){// Checks if type of file is movies and then sends the sql query to MySQL server.
 	$sql = "INSERT INTO `videos`.`".$type_of_file."` (`id`, `name`, `date`, `lang`, `format`, `type`) VALUES (NULL, '".$name."', '".$date_of_release."', '".$language."', '".$format."', '".$type_of_file."')";
-	$query = mysql_query($sql);
+	$query = mysql_query($sql);// Sending the above query to MySQL server.
 }
-else{
+else{// This if and else statements are implemented since anime and television have episodes which movies doesn't.
 	$sql = "INSERT INTO `videos`.`".$type_of_file."` (`id`, `name`, `episode`, `date`, `format`, `type`) VALUES (NULL, '".$name."', '".$no_of_ep."', '".$date_of_release."', '".$format."', '".$type_of_file."')";
-	$query = mysql_query($sql);
+	$query = mysql_query($sql);// Sending the above query to MySQL server.
 }
 
 ?>
