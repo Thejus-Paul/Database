@@ -1,3 +1,7 @@
+New Features in v0.2
+1. Insertion can be done using insert.php or through 'New' tab in index.php
+2. Changed the style.css to make it easy to read.
+
 # Database v0.2
 I created Database to organize and to have a quick overview of the downloaded movies, tv series and anime that I have. Database is made from PHP and MySQL.
 

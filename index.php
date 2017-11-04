@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Database 0.1</title>
+	<title>Database 0.2</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
