@@ -1,4 +1,4 @@
-New Features in v0.2
+# New Features in v0.2
 1. Insertion can be done using insert.php or through 'New' tab in index.php
 2. Changed the style.css to make it easy to read.
 
