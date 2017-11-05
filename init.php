@@ -38,13 +38,14 @@
 		fwrite($myfile,"localhost\n");/* 'localhost' as the default host address for Usb Web Server.*/
 		}
 	else{/*This statement will be executed when we press the 'submit' button  */
-		$username = $_GET['username']."\n";/* Username for your MySQL Server. This and below are taken from the form using GET method.*/
-		$password = $_GET['password']."\n";/* Password for your MySQL Server.*/
-		$host = $_GET['host']."\n";/* Host Address for your MySQL Server.*/
+		@$username = $_GET['username']."\n";/* Username for your MySQL Server. This and below are taken from the form using GET method.*/
+		@$password = $_GET['password']."\n";/* Password for your MySQL Server.*/
+		@$host = $_GET['host']."\n";/* Host Address for your MySQL Server.*/
 		fwrite($myfile,$username);/* Writing the username to the file.*/
 		fwrite($myfile,$password);/* Writing the password to the file.*/
 		fwrite($myfile,$host);/* Writing the host address to the file.*/
 	}
+	fclose($myfile);
 ?>
 
 </div>
