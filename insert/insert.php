@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf8">
-	<title>Adding New - Database v0.2</title>
+	<title>Adding New - Database v0.3</title>
 	<link rel="stylesheet" href="insert.css">
 </head>
 <body>
