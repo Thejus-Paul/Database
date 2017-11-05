@@ -36,10 +36,15 @@
 <div class="content">
 	<?php
 
-	$user = "root";
-	$pass = "usbw";
+	$file_open = fopen("/init/init.txt","r");
+
+	if($file_open){
+		$user = trim(fgets($file_open),"\n");
+		$pass = trim(fgets($file_open),"\n");
+		$server = trim(fgets($file_open),"\n");
+		}
+
 	$db = "videos";
-	$server = "localhost";
 
 	@$search_name = $_GET['name'];// @ to cancel the error forming due to no initial Value.
 	@$sel_anime_name = $_GET['sel_anime_name'];
@@ -167,7 +172,7 @@
 			echo "</div>";
 		}
 	}
-
+	fclose($file_open);
 ?>
 </div>
 </body>
