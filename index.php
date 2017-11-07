@@ -36,15 +36,15 @@
 <div class="content">
 	<?php
 
-	$file_open = fopen("/init/init.txt","r");
+	$file_open = fopen("/init/init.txt","r");// Opening the file for MySQL login.
 
 	if($file_open){
-		$user = trim(fgets($file_open),"\n");
-		$pass = trim(fgets($file_open),"\n");
-		$server = trim(fgets($file_open),"\n");
+		$user = trim(fgets($file_open),"\n");// Taking the text from the line and removing the '\n'. This takes the username.
+		$pass = trim(fgets($file_open),"\n");// Taking the text from the line and removing the '\n'. This takes the password.
+		$server = trim(fgets($file_open),"\n");// Taking the text from the line and removing the '\n'. This takes the host address.
 		}
 
-	$db = "videos";
+	$db = "videos";// initialize the database name as videos
 
 	@$search_name = $_GET['name'];// @ to cancel the error forming due to no initial Value.
 	@$sel_anime_name = $_GET['sel_anime_name'];
@@ -172,7 +172,7 @@
 			echo "</div>";
 		}
 	}
-	fclose($file_open);
+	fclose($file_open);// Closing the file used to MySQL Credentials.
 ?>
 </div>
 </body>
