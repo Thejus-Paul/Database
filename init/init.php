@@ -47,7 +47,7 @@
 		fwrite($myfile,$host);/* Writing the host address to the file.*/
 		echo "<center><br><a href='../index.php'> Continue </a></center>";
 	}
-	fclose($myfile);
+	fclose($myfile);// Closing the file as to prevent file corruption.
 ?>
 </div>
 </body>
