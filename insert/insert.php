@@ -21,6 +21,7 @@
 		Date of Release:<input type="Date" name="date_of_release"><br><br><br><!-- Date of Release in order to search for the latest Added -->
 		Language:<input type="text" name="language" id="language"><br><br><br><!-- Language of the video (Now only applicable to Movies.If you want this for Television or Anime then add a new column in mysql and edit '$sql' in PHP) -->
 		Format of the File:<input type="text" name="format"><br><br><br><!-- Format of the file,Example: mp4,mkv. -->
+		Image :<input type="file" name="image_input"></input><br><br><br>
 		<button onClick="check_series()">Insert</button><!-- Submit Button -->
 	</form>
 </div>

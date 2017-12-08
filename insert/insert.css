@@ -16,7 +16,7 @@ First of all I removed all the margin and padding.
 
 /* Inside the body tag */
 body{
-  background: #3F51B5;
+  background: #000;
   font-family: 'Ubuntu', sans-serif;
 }/* Background Color */
 
@@ -24,12 +24,15 @@ body{
 
 .insertion_form{
   margin-left: 30%;
-  background: #2196F3;/* Form Background Color */
+  background: #777;/* Form Background Color */
   margin-top:5%;
-  color:white;/* Color of the text */
+  color:black;/* Color of the text */
   width:40%;
   font-size:1.2em;
-  box-shadow: 20px 25px 100px #333;/* Shadow effect for the form box */
+  box-shadow: 2px 25px 50px black,
+              10px 11px 20px black,
+              11px 11px 20px black,
+              0px 10px 40px white;/* Shadow effect for the form box */
 }
 
 form{padding:5%;}/* Padding all the sides of form, else the input box will be so close to the borders. */
@@ -43,7 +46,7 @@ form input, select{
   float: right;/* Floating towards right for uniform alignment */
   margin-right: 25px;/* A little gap between borders of form and input box */
   padding:10px;
-  border:1px solid black;/* Removing the borders from input tag */
+  border:0;/* Removing the borders from input tag */
   width:50%;/* Elongation of the input box */
   font-size: .9em;
   text-align:center;
@@ -51,7 +54,6 @@ form input, select{
 }
 form input:focus,select:focus{
   background: black;/* While in focus the corresponding tag will change its color from grey to black */
-  transform: scale(1.1);/* Growing big */
   box-shadow: 0px 0px 20px white;/* A shadow effect */
 }
 form input:disabled{background-color: transparent;color:transparent;}/* Hiding the input box which are disabled. */
@@ -60,19 +62,21 @@ form input:disabled{background-color: transparent;color:transparent;}/* Hiding t
 
 button{
   font-family: 'Ubuntu', sans-serif;
-  background:#3F51B5;
+  background:#333;
+  text-shadow: 2px 2px 2px black,3px 2px 1px black;
   color:white;
   border-radius:10px;
   padding:20px;
   font-size:1em;
   margin-left:40%;
-  box-shadow: 0px 6px #5C6BC0;
+  box-shadow: 2px 6px #333;
   transition: all .1s;
 }
 
 /* While Insert Button is Clicked */
 
 button:active{
-  box-shadow: 0px 2px #3F51B5;
+  background: #333;
+  box-shadow: 0px 2px #000;
   transform: translateY(5px);
 }
