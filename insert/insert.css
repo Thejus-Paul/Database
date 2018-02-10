@@ -1,7 +1,3 @@
-/*
-Here is all the styling for 'insert.php'.
-First of all I removed all the margin and padding.
-*/
 *{
   margin:0;
   padding: 0;
@@ -9,24 +5,24 @@ First of all I removed all the margin and padding.
 
 /* Fonts */
 
-@font-face{
-	font-family:Lobster Two;
-	src: url('./fonts/Ubuntu.woff2') format('woff2');
+@font-face {
+  font-family: 'Ubuntu';
+  src: url(../fonts/Ubuntu.woff2) format('woff2');
 }
 
 /* Inside the body tag */
 body{
   background: #000;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu';
 }/* Background Color */
 
 /* The Form */
 
 .insertion_form{
   margin-left: 30%;
-  background: #777;/* Form Background Color */
+  background: aqua;
   margin-top:5%;
-  color:black;/* Color of the text */
+  color:black;
   width:40%;
   font-size:1.2em;
   box-shadow: 2px 25px 50px black,
@@ -40,28 +36,29 @@ form{padding:5%;}/* Padding all the sides of form, else the input box will be so
 /* Properties of Input Boxes and Select Menu */
 
 form input, select{
-  font-family: 'Ubuntu', sans-serif;
-  background: #333;/* Input Box Background Color */
-  color:white;/* Color of the text */
-  float: right;/* Floating towards right for uniform alignment */
-  margin-right: 25px;/* A little gap between borders of form and input box */
+  font-family: 'Ubuntu';
+  background: #222;
+  color: white;
+  border-radius: 50px;
+  float: right;
+  margin-right: 25px;
   padding:10px;
-  border:0;/* Removing the borders from input tag */
-  width:50%;/* Elongation of the input box */
+  border:1px solid black;
+  width:50%;
   font-size: .9em;
   text-align:center;
-  transition: all 1s;/* Transition effect for input and select boxes when focused/selected. */
+  transition: all 1s;
 }
 form input:focus,select:focus{
-  background: black;/* While in focus the corresponding tag will change its color from grey to black */
-  box-shadow: 0px 0px 20px white;/* A shadow effect */
+  background: black;
+  box-shadow: 0px 0px 20px white;
 }
-form input:disabled{background-color: transparent;color:transparent;}/* Hiding the input box which are disabled. */
+form input:disabled{background-color: transparent;color:transparent;}
 
 /* Insert Button Properties */
 
 button{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu';
   background:#333;
   text-shadow: 2px 2px 2px black,3px 2px 1px black;
   color:white;
