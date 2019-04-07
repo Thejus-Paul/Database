@@ -53,25 +53,29 @@ function check_series(){
 @$format = $_GET['format'];// @ - same as above
 @$language = $_GET['language'];// @ - same as above
 
-$user = 'root';// Username of MySQL server
-$pass = 'usbw';// Password of MySQL server
-$host = 'localhost';// Server Name of MySQL server
+$file_open = fopen("../init/init.txt","r");// Opening the file for MySQLi login.
+
+if($file_open){
+	$user = trim(fgets($file_open),"\n");// Taking the text from the line and removing the '\n'. This takes the username.
+	$pass = trim(fgets($file_open),"\n");// Taking the text from the line and removing the '\n'. This takes the password.
+	$server = trim(fgets($file_open),"\n");// Taking the text from the line and removing the '\n'. This takes the host address.
+	}
 $db = 'videos';// Database of MySQL server
 
-$conn = mysql_connect($host,$user,$pass);// Connecting to MySQL server.
+$conn = mysqli_connect($server,$user,$pass);// Connecting to MySQL server.
 
 if(!$conn){echo 'Error: MySQL connection Failed!';}// If any error in connecting to MySQl, then this code will be executed.
 
-$sel_db = mysql_select_db($db);// Selecting the Required Database from MySQL.
+$sel_db = mysqli_select_db($conn,$db);// Selecting the Required Database from MySQL.
 if(!$sel_db){echo '\nError:Database connection Failed!';}// If any error in connecting to MySQl Database, then this code will be executed.
 
 if($type_of_file == "movies"){// Checks if type of file is movies and then sends the sql query to MySQL server.
 	$sql = "INSERT INTO `videos`.`".$type_of_file."` (`id`, `name`, `date`, `lang`, `format`, `type`) VALUES (NULL, '".$name."', '".$date_of_release."', '".$language."', '".$format."', '".$type_of_file."')";
-	$query = mysql_query($sql);// Sending the above query to MySQL server.
+	$query = mysqli_query($conn,$sql);// Sending the above query to MySQL server.
 }
 else{// This if and else statements are implemented since anime and television have episodes which movies doesn't.
 	$sql = "INSERT INTO `videos`.`".$type_of_file."` (`id`, `name`, `episode`, `date`, `format`, `type`) VALUES (NULL, '".$name."', '".$no_of_ep."', '".$date_of_release."', '".$format."', '".$type_of_file."')";
-	$query = mysql_query($sql);// Sending the above query to MySQL server.
+	$query = mysqli_query($conn,$sql);// Sending the above query to MySQL server.
 }
 
 ?>
