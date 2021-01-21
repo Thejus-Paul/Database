@@ -1,6 +1,10 @@
 # Database v0.3
 I created Database to organize and to have a quick overview of the downloaded movies, tv series and anime that I have. Database is created using PHP and MySQL.
 
+#Demo
+https://i.imgur.com/ZXgNsAS.mp4
+
+# Getting Started
 To install, Please follow these steps:
 1. Download XAMPP or any other webserver application having PHP and MySQL.
 2. Import videos.sql.
